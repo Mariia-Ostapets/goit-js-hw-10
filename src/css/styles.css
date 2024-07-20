@@ -42,7 +42,8 @@ input:focus {
 input:disabled {
   border-color: #808080;
   color: #808080;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background-color: red;
 }
 button {
   border: none;
