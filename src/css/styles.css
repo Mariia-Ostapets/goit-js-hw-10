@@ -1,3 +1,4 @@
+/* COMMON STYLES */
 * {
   box-sizing: border-box;
 }
@@ -13,22 +14,14 @@ body {
 ul {
   list-style-type: none;
 }
-.wrapper {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 32px;
-  justify-content: center;
-}
 input {
   font-family: inherit;
-  width: 272px;
-  height: 40px;
-  line-height: 1.5;
   background-color: transparent;
   outline: transparent;
   border: 1px solid #808080;
   border-radius: 4px;
   padding: 8px 16px;
+  line-height: 1.5;
   transition: border-color 250ms linear, color 250ms linear,
     background-color 250ms linear;
 }
@@ -37,36 +30,51 @@ input:hover {
 }
 input:focus {
   border-color: #4e75ff;
-  color: #000000;
-}
-input:disabled {
-  border-color: #808080;
-  color: #808080;
-  /* background-color: #fafafa; */
-  background-color: red;
 }
 button {
+  display: block;
   border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  width: 75px;
-  height: 40px;
+  outline: transparent;
   background-color: #4e75ff;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
   font-family: inherit;
-  transition: background-color 250ms linear;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  transition: background-color 250ms linear, color 250ms linear;
 }
-button:hover,
-button:focus {
+button:hover {
   background-color: #6c8cff;
 }
-button:disabled {
+/* TIMER STYLES */
+.wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+.wrapper input {
+  width: 272px;
+  height: 40px;
+}
+.wrapper input:disabled {
+  border-color: #808080;
+  color: #808080;
+  background-color: #fafafa;
+  cursor: not-allowed;
+}
+.wrapper button {
+  width: 75px;
+}
+.wrapper button:disabled {
   color: #989898;
   background-color: #cfcfcf;
+  cursor: not-allowed;
 }
 .timer {
   display: flex;
@@ -79,15 +87,61 @@ button:disabled {
   align-items: center;
 }
 .value {
-  font-weight: 400;
   font-size: 40px;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
 }
 .label {
-  font-weight: 400;
-  font-size: 16px;
   line-height: 1.5;
-  color: #2e2f42;
+  text-transform: uppercase;
+}
+/* SNACKBAR STYLES */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 60px auto;
+  width: 360px;
+}
+.form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+.delay-input {
+  height: 40px;
+  width: 360px;
+  line-height: 1.5;
+}
+fieldset {
+  display: flex;
+  width: 360px;
+  height: 66px;
+  gap: 48px;
+  justify-content: center;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: border-color 250ms linear;
+}
+legend {
+  line-height: 1.5;
+}
+fieldset > label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.radio-input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+fieldset:hover {
+  border-color: #000000;
+}
+fieldset + button {
+  width: 360px;
+  margin-top: 8px;
 }

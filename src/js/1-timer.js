@@ -20,12 +20,13 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-      const selectedDate = selectedDates[0];
+    const selectedDate = selectedDates[0];
+    
     if (selectedDate <= new Date()) {
         iziToast.error({
         title: "Invalid date",
-          message: "Please choose a date in the future",
-          position: 'center'
+        message: "Please choose a date in the future",
+        position: 'center'
         });
         startButton.disabled = true;
     } else {
